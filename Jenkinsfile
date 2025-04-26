@@ -106,11 +106,11 @@ pipeline {
                     reuseNode true
                 }
             }
-
+            
             environment {
                 CI_ENVIRONMENT_URL = 'https://guileless-alfajores-bc869a.netlify.app'
             }
-
+            
             steps {
                 sh '''
                     npx playwright test  --reporter=html
@@ -119,7 +119,7 @@ pipeline {
 
             post {
                 always {
-                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'playwright E2E', reportTitles: '', useWrapperFileDirectly: true])
+                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Playwright E2E', reportTitles: '', useWrapperFileDirectly: true])
                 }
             }
         }
